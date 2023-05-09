@@ -22,6 +22,10 @@ body {
     color: var(--main-black);
 
 }
+
+main {
+    display: flex;
+}
 /*HEADER STYLES */
 .header {
     width: 100vw;
@@ -32,13 +36,8 @@ body {
 
 .header-center {
     width: 100vw;
-    max-width: 1600px;
     margin: 0 auto;
     padding: 0.5rem 2rem;
-    
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .logo {
@@ -50,48 +49,29 @@ body {
 /* LEFT NAV STYLES */
 
 .leftside-nav {
-    height: calc(100% - 60px);
+    height: calc(100vh - 60px);
+    width: 25%;
+    min-width: 200px;
     display: flex;
-    justify-content: space-between;
-    width: 100%;
-    min-width: 300px;
-    position: fixed;
-
-}
-
-.active-tab {
-    width: 100%;
-    display: none;
-}
-
-.active-tab-show {
-    display: block;
-}
-
-@media screen and (min-width: 650px){
-    .leftside-nav {
-        width: 25%;
-    }
-}
-
-
-.tab-menu {
-    border-left: var(--light-border);
+    flex-direction: column;
     border-right: var(--light-border);
-    padding: 0.5rem 0.75rem;
+    position: relative;
 }
 
+.project-header {
+    display: flex;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: var(--light-border);
+}
 
-.projects-btn {
-    font-size: 1.5rem;
+.fa-folder-plus {
     cursor: pointer;
-}
-
-.projects-container h1 {
-    text-align: center;
-    border-bottom: var(--light-border); 
-    padding: 0.5rem 0;
-    user-select: none;
+    font-size: 1.5rem;
 }
 
 .projects {
@@ -99,14 +79,75 @@ body {
 }
 
 .project {
+    max-width: 250px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border: 1px solid rgba(0,0,0,0.2);
     border-radius: 3px;
     padding: 0.75rem 0.5rem;
-    margin: 1rem 0;
+    margin: 2rem auto;
     cursor: pointer;
-
 }
+
+.project i {
+    font-size: 1.2rem;
+    color: var(--main-black)
+}
+
+.project-add-form {
+    width: 100%;
+    position: absolute;
+    bottom: calc(100vh);
+    padding: 1rem 1rem;
+}
+
+.project-add-form-active {
+    top: 60px;
+    height: 100%;
+    background: white;
+}
+
+.project-add-form label {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.project-add-form input {
+    padding: 0.25rem 0.5rem;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.project-add-form button {
+    padding: 0.5rem 1rem;
+    background: var(--main-white);
+    border: 2px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    margin-top: 3rem;  
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+/* MAIN BODY STYLES */
+
+.main-body {
+    width: 100%;
+}
+
+.main-body-header {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    border-bottom: var(--light-border);
+}
+
 
