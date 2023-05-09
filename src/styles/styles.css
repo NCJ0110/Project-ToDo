@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --main-black: #222;
+    --main-white: #fff;
+    --main-color: rgb(255, 183, 49);
+    --main-transition: all 0.3s linear;
+}
+
+body {
+    font-family: 'Lato';
+    height: 100vw;
+    width: 100vw;
+    color: var(--main-black)
+}
+
+.header {
+    width: 100vw;
+    height: 60px;
+}
+
+.header-center {
+    width: 100vw;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+    user-select: none;
+}
+
+.projects-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
