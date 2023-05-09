@@ -86,7 +86,7 @@ main {
     border: 1px solid rgba(0,0,0,0.2);
     border-radius: 3px;
     padding: 0.75rem 0.5rem;
-    margin: 2rem auto;
+    margin: 1rem auto;
     cursor: pointer;
 }
 
@@ -144,7 +144,7 @@ main {
 
 .main-body-header {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
     height: 60px;
     border-bottom: var(--light-border);
 
@@ -156,6 +156,19 @@ main {
     align-items: center;
     gap: 0.5rem;
     font-size: 1.1rem;
+}
+
+.current-project-title{
+    width: 150px;
+    cursor: pointer;
+}
+
+.add-todo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    border-left: var(--light-border);
 }
 
 .todo-container {
@@ -191,9 +204,22 @@ main {
     justify-content: center;
 }
 
+.edit-btn {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
 @media screen and (max-width: 600px){
     .main-body-header {
-        padding: 0rem 1rem;
-        grid-template-columns: 0fr 1fr 1fr;
+        padding: 0rem 0.5rem;
+        grid-template-columns: 0fr 2fr 1fr;
+    }
+
+    .current-project i {
+        padding-right: 0.5rem;
+    }
+
+    .current-project-title {
+        font-size: 1.2rem;
     }
 }
