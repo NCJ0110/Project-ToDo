@@ -20,11 +20,13 @@ body {
     height: 100vh;
     width: 100vw;
     color: var(--main-black);
+    user-select: none;
 
 }
 
 main {
     display: flex;
+    position: relative;
 }
 /*HEADER STYLES */
 .header {
@@ -100,10 +102,24 @@ main {
     position: absolute;
     bottom: calc(100vh);
     padding: 1rem 1rem;
+    z-index: 2;
+}
+
+.project-add-form-title {
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-bottom: 2rem;
+    
+}
+
+.project-add-form i {
+    padding-left: 1.5rem;
+    font-size: 1.2rem;
+    cursor: pointer;
 }
 
 .project-add-form-active {
-    top: 60px;
+    top: 0px;
     height: 100%;
     background: white;
 }
@@ -129,6 +145,7 @@ main {
     border: 2px solid rgba(0,0,0,0.2);
     border-radius: 3px;
     margin-top: 3rem;  
+    cursor: pointer;
 }
 
 .btn-container {
@@ -169,6 +186,7 @@ main {
     justify-content: center;
     font-size: 1.2rem;
     border-left: var(--light-border);
+    cursor: pointer;
 }
 
 .todo-container {
@@ -222,4 +240,13 @@ main {
     .current-project-title {
         font-size: 1.2rem;
     }
+}
+
+/* ADD TODO FORM */
+.add-todo-form {
+    background-color: var(--main-white);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 60px;
 }
