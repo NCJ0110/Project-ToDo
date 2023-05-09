@@ -11,18 +11,23 @@
     --main-white: #fff;
     --main-color: rgb(255, 183, 49);
     --main-transition: all 0.3s linear;
+    --light-border: 1px solid rgba(0,0,0,0.1);
+    --header-height: 60px;
 }
 
 body {
     font-family: 'Lato';
-    height: 100vw;
+    height: 100vh;
     width: 100vw;
-    color: var(--main-black)
-}
+    color: var(--main-black);
 
+}
+/*HEADER STYLES */
 .header {
     width: 100vw;
-    height: 60px;
+    height: var(--header-height);
+    border-bottom: var(--light-border);
+    display: flex;
 }
 
 .header-center {
@@ -30,7 +35,7 @@ body {
     max-width: 1600px;
     margin: 0 auto;
     padding: 0.5rem 2rem;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,7 +46,67 @@ body {
     user-select: none;
 }
 
+
+/* LEFT NAV STYLES */
+
+.leftside-nav {
+    height: calc(100% - 60px);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    min-width: 300px;
+    position: fixed;
+
+}
+
+.active-tab {
+    width: 100%;
+    display: none;
+}
+
+.active-tab-show {
+    display: block;
+}
+
+@media screen and (min-width: 650px){
+    .leftside-nav {
+        width: 25%;
+    }
+}
+
+
+.tab-menu {
+    border-left: var(--light-border);
+    border-right: var(--light-border);
+    padding: 0.5rem 0.75rem;
+}
+
+
 .projects-btn {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+.projects-container h1 {
+    text-align: center;
+    border-bottom: var(--light-border); 
+    padding: 0.5rem 0;
+    user-select: none;
+}
+
+.projects {
+    padding: 0rem 0.5rem;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 3px;
+    padding: 0.75rem 0.5rem;
+    margin: 1rem 0;
+    cursor: pointer;
+
+}
+
