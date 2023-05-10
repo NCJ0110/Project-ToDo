@@ -467,6 +467,78 @@ function styleTagTransform(css, styleElement) {
 }
 module.exports = styleTagTransform;
 
+/***/ }),
+
+/***/ "./src/modules/Project.js":
+/*!********************************!*\
+  !*** ./src/modules/Project.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Project": () => (/* binding */ Project)
+/* harmony export */ });
+/* harmony import */ var _Todo__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Todo */ "./src/modules/Todo.js");
+
+
+class Project {
+    constructor(title){
+        this.title = title;
+        this.todos = [new _Todo__WEBPACK_IMPORTED_MODULE_0__.Todo("test todo", "asap", "high")];
+
+    }
+
+    static test(){
+        console.log("test");
+    }
+}
+
+/***/ }),
+
+/***/ "./src/modules/ProjectsHandler.js":
+/*!****************************************!*\
+  !*** ./src/modules/ProjectsHandler.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ProjectsHandler": () => (/* binding */ ProjectsHandler)
+/* harmony export */ });
+/* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Project */ "./src/modules/Project.js");
+
+
+class ProjectsHandler {
+    constructor(){
+        this.projects = [new _Project__WEBPACK_IMPORTED_MODULE_0__.Project('Default Project')];
+    }
+
+    test(){
+        console.log(this.projects);
+    }
+}
+
+/***/ }),
+
+/***/ "./src/modules/Todo.js":
+/*!*****************************!*\
+  !*** ./src/modules/Todo.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Todo": () => (/* binding */ Todo)
+/* harmony export */ });
+class Todo {
+    constructor(title, date, priority){
+        this.title = title;
+        this.date = date;
+        this.priority = priority;
+    }
+}
+
 /***/ })
 
 /******/ 	});
@@ -550,11 +622,17 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/styles.css */ "./src/styles/styles.css");
+/* harmony import */ var _modules_ProjectsHandler__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/ProjectsHandler */ "./src/modules/ProjectsHandler.js");
 
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const projectsHandler = new _modules_ProjectsHandler__WEBPACK_IMPORTED_MODULE_1__.ProjectsHandler();
+    projectsHandler.test();
+})
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle25bf37d6ba76214a4ce3.js.map
+//# sourceMappingURL=bundleed31c52f0cd9d6444d89.js.map
