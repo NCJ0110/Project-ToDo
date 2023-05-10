@@ -209,7 +209,9 @@ main {
 .todo-container {
     padding: 1rem;
     width: 100%;
-
+    text-align: center;
+    color: rgb(194, 194, 194);
+    font-size: 2rem;
 }
 
 .todo {
@@ -217,13 +219,31 @@ main {
     max-width: 500px;
     margin: 0 auto;
     display: grid;
+    color: var(--main-black);
+    font-size: 1.1rem;
     grid-template-columns: 30px 1fr 0.1fr;
 }
 
-.priority {
+.todo + .todo {
+    margin-top: 1rem;
+}
+
+.priority-low {
     width: 15px;
     border-right: green;
     background-color: green;
+}
+
+.priority-medium {
+    width: 15px;
+    border-right: yellow;
+    background-color: yellow;
+}
+
+.priority-high {
+    width: 15px;
+    border-right: red;
+    background-color: red;
 }
 
 .info {

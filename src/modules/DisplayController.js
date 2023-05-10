@@ -14,6 +14,7 @@ export class DisplayController{
         this.activeProject = projects[0];
         DOMManipulator.createProjectsHTML(projects);
         DOMManipulator.updateActiveTitle(this.activeProject);
+        DOMManipulator.displayTodosHTML(this.activeProject);
 
     }
 

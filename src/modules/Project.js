@@ -6,6 +6,6 @@ export class Project {
     constructor(title){
         this.title = title;
         this.id = uuidv4();
-        this.todos = [new Todo("test todo", "asap", "high")];
+        this.todos = [new Todo("test", "2023", "low")];
     }
 }
