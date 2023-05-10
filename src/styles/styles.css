@@ -182,6 +182,11 @@ main {
     font-size: 1.1rem;
 }
 
+.current-project i {
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
 .current-project-title{
     width: 150px;
     cursor: pointer;
@@ -193,8 +198,13 @@ main {
     justify-content: center;
     font-size: 1.2rem;
     border-left: var(--light-border);
+
+}
+
+.add-todo i {
     cursor: pointer;
 }
+
 
 .todo-container {
     padding: 1rem;
@@ -253,21 +263,22 @@ main {
 .add-todo-form {
     background-color: var(--main-white);
     width: 100%;
-    height: 100%;
     position: absolute;
-    top: calc(100vh);
+    bottom: calc(100vh);
     left: 0px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    border: 2px solid red;
     padding: 2rem 2rem;
-    transition: var(--main-transition)
+    transition: var(--main-transition);
+    z-index: 2;
+    
 }
 
 .add-todo-form-active {
     top: 0px;
+    height: 100%;
 }
 
 .form-item {
