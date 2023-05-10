@@ -5,7 +5,7 @@ export class ProjectsHandler {
         this.projects = [new Project('Default Project')];
     }
 
-    test(){
-        console.log(this.projects);
+    getProjects(){
+        return this.projects;
     }
 }
