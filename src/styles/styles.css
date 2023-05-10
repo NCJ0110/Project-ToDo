@@ -15,6 +15,10 @@
     --header-height: 60px;
 }
 
+html {
+    overflow: hidden;
+}
+
 body {
     font-family: 'Lato';
     height: 100vh;
@@ -99,9 +103,15 @@ main {
 .project-add-form {
     width: 100%;
     position: absolute;
-    bottom: calc(100vh);
+    top: calc(100vh);
     padding: 1rem 1rem;
     z-index: 2;
+}
+
+.project-add-form-active {
+    top: 0px;
+    height: 100%;
+    background: white;
 }
 
 .project-add-form-title {
@@ -117,11 +127,7 @@ main {
     cursor: pointer;
 }
 
-.project-add-form-active {
-    top: 0px;
-    height: 100%;
-    background: white;
-}
+
 
 .project-add-form label {
     font-size: 1.2rem;
@@ -163,6 +169,7 @@ main {
 
 .main-body {
     width: 100%;
+    height: calc(100vh - 60px);
     position: relative;
 }
 
@@ -284,21 +291,39 @@ main {
     background-color: var(--main-white);
     width: 100%;
     position: absolute;
-    bottom: calc(100vh);
+    top: calc(100vh);
     left: 0px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 2rem 2rem;
+    padding: 1rem 2rem;
     transition: var(--main-transition);
     z-index: 2;
-    
 }
 
 .add-todo-form-active {
     top: 0px;
     height: 100%;
+}
+
+.add-todo-form-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+}
+
+.todo-add-form-title {
+    font-size: 1.2rem;
+    display: inline-block;
+    padding-left: 4rem;
+}
+
+.add-todo-form-header i {
+    cursor: pointer;
+    font-size: 1.2rem;
 }
 
 .form-item {
@@ -317,6 +342,10 @@ main {
     font-size: 1.2rem;
     padding: 0.5rem 0.25rem;
     text-align: center;
+}
+
+.form-item input[type=text] {
+    max-width: 230px;
 }
 
 .form-item select{

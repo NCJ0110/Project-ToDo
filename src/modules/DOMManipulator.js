@@ -1,6 +1,23 @@
 export class DOMManipulator {
 
-     static createProjectsHTML(projects){
+    static setupListeners(){
+
+        //listeners for add todo and project
+        document.addEventListener('click', (e) => {
+            const addTodoFormEl = document.querySelector('.add-todo-form');
+
+            if(e.target.classList.contains('fa-calendar-plus')){
+
+                addTodoFormEl.classList.add('add-todo-form-active');
+                
+            } else if(e.target.classList.contains('fa-arrow-left')){
+                addTodoFormEl.classList.remove('add-todo-form-active');
+
+            }
+        })
+    }
+
+    static createProjectsHTML(projects){
         const projectsDOM = document.querySelector('.projects');
         let projectHTML = "";
         let defaultID = projects[0].id;
@@ -34,7 +51,6 @@ export class DOMManipulator {
         const todoContainer = document.querySelector('.todo-container');
 
         let todoHTML = "";
-
         if(project.todos.length === 0){
             todoContainer.innerText = "There are currently no Todos in this project"
         } else {
@@ -52,8 +68,10 @@ export class DOMManipulator {
                 </div>
             `
             })
+
+             todoContainer.innerHTML = todoHTML;
+    }
         }
 
-        todoContainer.innerHTML = todoHTML;
-    }
+       
 }
