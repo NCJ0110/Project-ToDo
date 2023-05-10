@@ -627,6 +627,7 @@ function validate(uuid) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "displayController": () => (/* binding */ displayController),
 /* harmony export */   "projectsHandler": () => (/* binding */ projectsHandler)
 /* harmony export */ });
 /* harmony import */ var _styles_styles_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/styles.css */ "./src/styles/styles.css");
@@ -637,9 +638,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const projectsHandler = new _modules_ProjectsHandler__WEBPACK_IMPORTED_MODULE_1__.ProjectsHandler();
+const displayController = new _modules_DisplayController__WEBPACK_IMPORTED_MODULE_2__.DisplayController();
 
 document.addEventListener('DOMContentLoaded', () => {
-    _modules_DisplayController__WEBPACK_IMPORTED_MODULE_2__.DisplayController.initializeUI();
+    displayController.initializeUI();
     
 })
 
@@ -685,6 +687,11 @@ class DOMManipulator {
 
         projectsDOM.innerHTML = projectHTML;
     }
+
+    static updateActiveTitle(project){
+        const projectTitle = document.querySelector('.current-project-title');
+        projectTitle.innerText = project.title;
+    }
 }
 
 /***/ }),
@@ -708,13 +715,19 @@ __webpack_require__.r(__webpack_exports__);
 
 
 class DisplayController{
-    static initializeUI(){
-        if(!_Storage__WEBPACK_IMPORTED_MODULE_1__.Storage.getProjects()){
-            const projects = ___WEBPACK_IMPORTED_MODULE_2__.projectsHandler.getProjects();
-            _DOMManipulator__WEBPACK_IMPORTED_MODULE_0__.DOMManipulator.createProjectsHTML(projects);
-        }
-       
+
+    constructor(){
+        this.activeProject = undefined;
     }
+
+    initializeUI(){
+        const projects = _Storage__WEBPACK_IMPORTED_MODULE_1__.Storage.getProjects() ? _Storage__WEBPACK_IMPORTED_MODULE_1__.Storage.getProjects() : ___WEBPACK_IMPORTED_MODULE_2__.projectsHandler.getProjects();
+        this.activeProject = projects[0];
+        _DOMManipulator__WEBPACK_IMPORTED_MODULE_0__.DOMManipulator.createProjectsHTML(projects);
+        _DOMManipulator__WEBPACK_IMPORTED_MODULE_0__.DOMManipulator.updateActiveTitle(this.activeProject);
+
+    }
+
 }
 
 /***/ }),
@@ -766,6 +779,7 @@ class ProjectsHandler {
     getProjects(){
         return this.projects;
     }
+
 }
 
 /***/ }),
@@ -894,4 +908,4 @@ class Todo {
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=bundle068aebdc52aba6bccbda.js.map
+//# sourceMappingURL=bundlea8b044c190a37fa9a52f.js.map

@@ -25,4 +25,9 @@ export class DOMManipulator {
 
         projectsDOM.innerHTML = projectHTML;
     }
+
+    static updateActiveTitle(project){
+        const projectTitle = document.querySelector('.current-project-title');
+        projectTitle.innerText = project.title;
+    }
 }

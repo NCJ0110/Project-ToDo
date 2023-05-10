@@ -3,10 +3,11 @@ import {ProjectsHandler} from './modules/ProjectsHandler';
 import { DisplayController } from './modules/DisplayController';
 
 const projectsHandler = new ProjectsHandler();
+const displayController = new DisplayController();
 
 document.addEventListener('DOMContentLoaded', () => {
-    DisplayController.initializeUI();
+    displayController.initializeUI();
     
 })
 
-export {projectsHandler}
+export {projectsHandler, displayController}
