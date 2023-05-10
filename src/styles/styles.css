@@ -297,7 +297,6 @@ main {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding: 1rem 2rem;
     transition: var(--main-transition);
     z-index: 2;
 }
@@ -309,16 +308,20 @@ main {
 
 .add-todo-form-header {
     width: 100%;
+    padding: 1.1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
+    
+    border-bottom: var(--light-border);
 }
 
 .todo-add-form-title {
     font-size: 1.2rem;
     display: inline-block;
     padding-left: 4rem;
+    min-width: 170px;
 }
 
 .add-todo-form-header i {
