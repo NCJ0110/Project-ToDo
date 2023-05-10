@@ -669,7 +669,6 @@ class DOMManipulator {
             const addTodoFormEl = document.querySelector('.add-todo-form');
 
             if(e.target.classList.contains('fa-calendar-plus')){
-
                 addTodoFormEl.classList.add('add-todo-form-active');
                 
             } else if(e.target.classList.contains('fa-arrow-left')){
@@ -954,4 +953,4 @@ class Todo {
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=bundled3e1830d24f091bc1708.js.map
+//# sourceMappingURL=bundle3aa4a223c12f8eff39f8.js.map
