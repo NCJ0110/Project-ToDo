@@ -8,4 +8,8 @@ export class Project {
         this.id = uuidv4();
         this.todos = [];
     }
+
+    addTodo(todoValues){
+        this.todos = [...this.todos, todoValues];
+    }
 }

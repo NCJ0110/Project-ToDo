@@ -19,4 +19,8 @@ export class DisplayController{
         DOMManipulator.setupListeners();
     }
 
+    getTodo(todoValues){
+        this.activeProject.addTodo(todoValues)
+    }
+
 }
