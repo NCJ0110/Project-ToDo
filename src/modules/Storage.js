@@ -7,4 +7,5 @@ export class Storage {
         const projects = JSON.parse(localStorage.getItem('projects'));
         return projects;
     }
+
 }

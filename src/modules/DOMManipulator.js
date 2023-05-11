@@ -50,6 +50,7 @@ export class DOMManipulator {
                     addTodoFormEl.classList.remove('add-todo-form-active');
 
                     displayController.getTodo(inputValuesObject);
+
                 } else {
                     if(inputValues[0] === ""){
                         taskAndDate[0].classList.add('form-input-invalid')
@@ -95,7 +96,6 @@ export class DOMManipulator {
 
     static displayTodosHTML(project) {
         const todoContainer = document.querySelector('.todo-container');
-
         let todoHTML = "";
         if(project.todos.length === 0){
             todoContainer.innerText = "There are currently no Todos in this project"
