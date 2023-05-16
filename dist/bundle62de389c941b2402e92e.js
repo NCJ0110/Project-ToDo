@@ -725,7 +725,7 @@ class DOMManipulator {
 
                     addTodoFormEl.classList.remove('add-todo-form-active');
 
-                    ___WEBPACK_IMPORTED_MODULE_0__.displayController.getTodo(inputValuesObject);
+                    ___WEBPACK_IMPORTED_MODULE_0__.displayController.getTodoData(inputValuesObject);
 
                 } else {
                     if(inputValues[0] === ""){
@@ -827,19 +827,8 @@ class DisplayController{
     }
 
     initializeUI(){
-        let projects = []
+        let projects = ___WEBPACK_IMPORTED_MODULE_2__.projectsHandler.initializeProjects();
         
-        projects = ___WEBPACK_IMPORTED_MODULE_2__.projectsHandler.getProjects();
-        if(_Storage__WEBPACK_IMPORTED_MODULE_1__.Storage.getProjects()){
-            let recreateProjects = ___WEBPACK_IMPORTED_MODULE_2__.projectsHandler.getProjects();
-            let rebuiltProjects = recreateProjects.map(project => {
-                return new _Project__WEBPACK_IMPORTED_MODULE_3__.Project(project.title, project.id, project.todos);
-            })
-
-            console.log(rebuiltProjects);
-            ___WEBPACK_IMPORTED_MODULE_2__.projectsHandler.reinitializeProjects(rebuiltProjects)
-            projects = ___WEBPACK_IMPORTED_MODULE_2__.projectsHandler.getProjects();
-        }
         this.activeProject = projects[0];
         
         _DOMManipulator__WEBPACK_IMPORTED_MODULE_0__.DOMManipulator.createProjectsHTML(projects);
@@ -848,7 +837,7 @@ class DisplayController{
         _DOMManipulator__WEBPACK_IMPORTED_MODULE_0__.DOMManipulator.setupListeners();
     }
 
-    getTodo(todoValues){
+    getTodoData(todoValues){
         this.activeProject.addTodo(todoValues)
 
         _DOMManipulator__WEBPACK_IMPORTED_MODULE_0__.DOMManipulator.displayTodosHTML(this.activeProject);
@@ -906,6 +895,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "ProjectsHandler": () => (/* binding */ ProjectsHandler)
 /* harmony export */ });
 /* harmony import */ var _Project__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Project */ "./src/modules/Project.js");
+/* harmony import */ var _Storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Storage */ "./src/modules/Storage.js");
+
 
 
 
@@ -919,8 +910,20 @@ class ProjectsHandler {
         return this.projects;
     }
 
-    reinitializeProjects(recreatedProjects){
-        this.projects = recreatedProjects;
+    initializeProjects(){
+        if(_Storage__WEBPACK_IMPORTED_MODULE_1__.Storage.getProjects()){
+            
+            let rebuiltProjects = this.getProjects().map(project => {
+                return new _Project__WEBPACK_IMPORTED_MODULE_0__.Project(project.title, project.id, project.todos);
+            })
+
+            this.projects = rebuiltProjects;
+            return this.getProjects();
+
+        } else {
+            return this.getProjects();
+        }
+     
     }
 
   
@@ -1057,4 +1060,4 @@ class Todo {
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=bundle040bc7ad7e262c4b5bf8.js.map
+//# sourceMappingURL=bundle62de389c941b2402e92e.js.map

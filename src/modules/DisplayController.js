@@ -11,19 +11,8 @@ export class DisplayController{
     }
 
     initializeUI(){
-        let projects = []
+        let projects = projectsHandler.initializeProjects();
         
-        projects = projectsHandler.getProjects();
-        if(Storage.getProjects()){
-            let recreateProjects = projectsHandler.getProjects();
-            let rebuiltProjects = recreateProjects.map(project => {
-                return new Project(project.title, project.id, project.todos);
-            })
-
-            console.log(rebuiltProjects);
-            projectsHandler.reinitializeProjects(rebuiltProjects)
-            projects = projectsHandler.getProjects();
-        }
         this.activeProject = projects[0];
         
         DOMManipulator.createProjectsHTML(projects);
@@ -32,7 +21,7 @@ export class DisplayController{
         DOMManipulator.setupListeners();
     }
 
-    getTodo(todoValues){
+    getTodoData(todoValues){
         this.activeProject.addTodo(todoValues)
 
         DOMManipulator.displayTodosHTML(this.activeProject);

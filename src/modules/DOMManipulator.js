@@ -49,7 +49,7 @@ export class DOMManipulator {
 
                     addTodoFormEl.classList.remove('add-todo-form-active');
 
-                    displayController.getTodo(inputValuesObject);
+                    displayController.getTodoData(inputValuesObject);
 
                 } else {
                     if(inputValues[0] === ""){
